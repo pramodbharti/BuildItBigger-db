@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.test.rule.ActivityTestRule;
@@ -16,11 +17,11 @@ import static junit.framework.TestCase.assertNotNull;
 
 @RunWith(AndroidJUnit4.class)
 public class AsyncTaskTest {
-
+private Context context;
     @Test
     public void notNullAsyncTask(){
         String result;
-        EndPointsAsyncTask endPointsAsyncTask = new EndPointsAsyncTask();
+        EndPointsAsyncTask endPointsAsyncTask = new EndPointsAsyncTask(context);
         endPointsAsyncTask.execute();
 
         try {

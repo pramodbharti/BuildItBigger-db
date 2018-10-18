@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Pair;
 
-import com.example.libjava.MyJokeClass;
 import com.example.myandroidlibrary.MyJokeActivity;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -14,15 +13,15 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
-import java.lang.ref.WeakReference;
 
 class EndPointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
 
-    public EndPointsAsyncTask(Context context){
+    public EndPointsAsyncTask(Context context) {
         this.context = context;
     }
+
     @Override
     protected String doInBackground(Pair<Context, String>... pairs) {
         if (myApiService == null) {  // Only do this once

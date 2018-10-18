@@ -34,7 +34,7 @@ public class MyJokeActivity extends AppCompatActivity {
     private void setData() {
         TextView jokeTextView = findViewById(R.id.tv_joke);
 
-        if (getIntent() != null){
+        if (getIntent().hasExtra(JOKE_TEXT)){
             String joke = getIntent().getStringExtra(JOKE_TEXT);
             jokeTextView.setText(joke);
         }
